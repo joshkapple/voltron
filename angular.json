@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "projects": {
+    "glidepath-voltron": {
+      "projectType": "application",
+      "root": "apps/glidepath-voltron",
+      "sourceRoot": "apps/glidepath-voltron/src",
+      "prefix": "snhu",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/glidepath-voltron",
+            "index": "apps/glidepath-voltron/src/index.html",
+            "main": "apps/glidepath-voltron/src/main.ts",
+            "polyfills": "apps/glidepath-voltron/src/polyfills.ts",
+            "tsConfig": "apps/glidepath-voltron/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/glidepath-voltron/src/favicon.ico",
+              "apps/glidepath-voltron/src/assets"
+            ],
+            "styles": ["apps/glidepath-voltron/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/glidepath-voltron/src/environments/environment.ts",
+                  "with": "apps/glidepath-voltron/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "glidepath-voltron:build:production"
+            },
+            "development": {
+              "browserTarget": "glidepath-voltron:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "glidepath-voltron:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/glidepath-voltron/src/**/*.ts",
+              "apps/glidepath-voltron/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/glidepath-voltron"],
+          "options": {
+            "jestConfig": "apps/glidepath-voltron/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "glidepath-voltron-e2e": {
+      "root": "apps/glidepath-voltron-e2e",
+      "sourceRoot": "apps/glidepath-voltron-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/glidepath-voltron-e2e/cypress.json",
+            "devServerTarget": "glidepath-voltron:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "glidepath-voltron:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/glidepath-voltron-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["glidepath-voltron"]
+    }
+  }
+}
