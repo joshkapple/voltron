@@ -1,7 +1,42 @@
 
+## Project structure
+    ./README.md                         # This readme file
+    ./apps/
+      ./apps/backend                      # The backend nestjs/express application
+      ./apps/frontend                     # Angular frontend app
+      ./apps/e2e                          # Cypress
+    ./docker                            # Docker build contexts
 
-# Snhu
+# Prerequisites
+- Install Node 14 and NPM [see recommended installs](#recommended-installs)
 
+## Recommended installs
+You may also want to install
+- Node Version Manager [NVM](https://github.com/nvm-sh/nvm) (an .nvmrc file is included in the project)
+- Docker
+
+# Getting started
+- From the project root run `npm install`
+- run `npm install`
+- build `nx build`
+- serve `nx serve`
+- (TODO development mode concurrent hot reload for backend and frontend)
+- visit your endpoints at http://localhost:8080/ and http://localhost:8080/api
+
+# Docker
+## Build
+- `cd` into the `./` root folder. (This gives Docker engine the context of the root folder)
+- `docker build --progress=plain -t backend:test -f ./docker/backend-build/Dockerfile .`
+  - where `backend` and `test` of `backend:test` are the image name and tag you wish to use
+- `docker image ls` should show your new image
+
+## Run
+- `docker run -p 8080:8080 backend:test`
+
+
+
+
+# NX
 This project was generated using [Nx](https://nx.dev).
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
