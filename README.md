@@ -30,7 +30,7 @@ You may also want to install
 - `docker image ls` should show your new image
 
 ## Run
-- `docker run -p 8080:8080 backend:test`
+- `docker run -p 8080:3333 backend:test`
 
 
 
