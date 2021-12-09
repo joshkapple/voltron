@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@voltron/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@voltron/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@voltron/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -15,6 +15,10 @@ import {DegreePipe} from './pipes/degree.pipe';
 import { FinderFormComponent } from './components/finder-form/finder-form.component';
 import { MultiCheckInterests } from './components/multi-check/multi-check-interests.component';
 import { MultiCheckDegrees } from './components/multi-check/multi-check-degrees.component';
+import {ButtonComponent} from "@voltron/ui";
+import {HeaderComponent} from "@voltron/ui";
+import {PageComponent} from "@voltron/ui";
+import {ButtonImplementationComponent} from "./components/button-implementation/button-implementation.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { MultiCheckDegrees } from './components/multi-check/multi-check-degrees.
     DegreePipe,
     FinderFormComponent,
     MultiCheckInterests,
-    MultiCheckDegrees
+    MultiCheckDegrees,
+    ButtonComponent,
+    ButtonImplementationComponent,
+    HeaderComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

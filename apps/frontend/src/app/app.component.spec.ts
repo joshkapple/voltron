@@ -12,6 +12,8 @@ import {FinderFormComponent} from "./components/finder-form/finder-form.componen
 import {MultiCheckInterests} from "./components/multi-check/multi-check-interests.component";
 import {MultiCheckDegrees} from "./components/multi-check/multi-check-degrees.component";
 import {BrowserTestingModule} from "@angular/platform-browser/testing";
+import {ButtonComponent} from "@voltron/ui";
+import {ButtonImplementationComponent} from "./components/button-implementation/button-implementation.component";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -23,7 +25,9 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        ApfHeaderComponent
+        ApfHeaderComponent,
+        ButtonComponent,
+        ButtonImplementationComponent
       ],
     }).compileComponents();
   });

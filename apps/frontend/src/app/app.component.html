@@ -1,5 +1,20 @@
 <div class="main">
   <!--<miles-test></miles-test>-->
+
+  <p>
+    <storybook-button
+      label="I am a storybook button"
+    ></storybook-button>
+  </p>
+
+  <p>
+    <app-button-implementation
+      label="I am an an extended button"
+      (onClick)="clickHandler($event)"
+    ></app-button-implementation>
+    {{clickText}}
+  </p>
+
   <apf-header></apf-header>
   <router-outlet></router-outlet>
 </div>
