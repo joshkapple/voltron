@@ -21,7 +21,7 @@ You may also want to install
 - build `nx build`
 - serve `nx serve`
 - (TODO development mode concurrent hot reload for backend and frontend)
-- visit your endpoints at http://localhost:8080/ and http://localhost:8080/api
+- visit your endpoints at http://localhost:3333/ and http://localhost:3333/api
 
 # Docker
 ## Build

@@ -37,6 +37,9 @@
           "configurations": {
             "production": {
               "buildTarget": "backend:build:production"
+            },
+            "development": {
+              "buildTarget": "backend:build:development"
             }
           }
         },
@@ -68,11 +71,11 @@
           "builder": "@nrwl/cypress:cypress",
           "options": {
             "cypressConfig": "apps/e2e/cypress.json",
-            "devServerTarget": "frontend:serve:development"
+            "devServerTarget": "backend:serve:development"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "frontend:serve:production"
+              "devServerTarget": "frontend:serve:development"
             }
           }
         },
@@ -85,7 +88,7 @@
         }
       },
       "tags": [],
-      "implicitDependencies": ["frontend"]
+      "implicitDependencies": ["backend"]
     },
     "frontend": {
       "projectType": "application",

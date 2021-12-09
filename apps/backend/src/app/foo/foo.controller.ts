@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
 
 @Controller('foo')
-export class ApiController {
+export class FooController {
   @Get()
   test(): string {
-    return "i'm a test ddddof api !";
+    return "i'm a test of foo !";
   }
 }

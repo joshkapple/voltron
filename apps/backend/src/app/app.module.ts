@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ApiController } from './api/api.controller';
 import { ConfigModule } from '@nestjs/config';
 import {ServeStaticModule} from "@nestjs/serve-static";
 import { join } from "path";
+import { FooController } from './foo/foo.controller';
 
 @Module({
   imports: [
@@ -16,7 +16,7 @@ import { join } from "path";
       exclude: ['api*']
     })
   ],
-  controllers: [AppController, ApiController],
+  controllers: [AppController, FooController],
   providers: [AppService],
 })
 export class AppModule {}
