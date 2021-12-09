@@ -1,0 +1,22 @@
+<div class="form-container">
+  <div>
+    <label for="duration"><strong>Maximum duration:</strong></label><br/>
+    <select id="duration" [(ngModel)]="params.maxDuration" (ngModelChange)="updateDuration(params.maxDuration)">
+      <option *ngFor="let dur of allDurations; first as isFirst" [value]="dur">
+        <span *ngIf="!isFirst">{{dur}} years</span>
+        <span *ngIf="isFirst">Any duration</span>
+      </option>
+    </select>
+  </div>
+  <div>
+    <label for="tuition"><strong>Maximum tuition:</strong></label><br/>
+    <select id="tuition" [(ngModel)]="params.maxTuition" (ngModelChange)="updateTuition(params.maxTuition)">
+      <option *ngFor="let tui of allTuitions; first as isFirst" [value]="tui">
+        <span *ngIf="!isFirst">{{tui | tuition}}</span>
+        <span *ngIf="isFirst">Any cost</span>
+      </option>
+    </select>
+  </div>
+  <multi-check-interests #mci [multiCheckId]="'mci'" (checkedBoxesUpdated)="updateInterests($event)"></multi-check-interests>
+  <multi-check-degrees #mcd [multiCheckId]="'mcd'" (checkedBoxesUpdated)="updateDegrees($event)"></multi-check-degrees>
+</div>

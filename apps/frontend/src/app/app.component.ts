@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'snhu-root',
+  selector: 'voltron-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

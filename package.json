@@ -1,5 +1,5 @@
 {
-  "name": "snhu",
+  "name": "voltron",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "node dist/apps/backend/main.js",
     "build": "nx build",
     "build:production": "nx build --prod",
+    "dev:serve": "nx run-many --parallel --target=serve --projects=backend,frontend",
     "test": "nx test"
   },
   "main": "dist/apps/backend/main.js",
@@ -45,6 +46,11 @@
     "@angular/cli": "~13.0.0",
     "@angular/compiler-cli": "^13.0.0",
     "@angular/language-service": "^13.0.0",
+    "@angular/router": "~13.0.0",
+    "@angular/forms": "~13.0.0",
+    "@angular/platform-browser": "~13.0.0",
+    "@angular/platform-browser-dynamic": "~13.0.0",
+    "angular-in-memory-web-api": "^0.13.0",
     "@babel/core": "^7.16.0",
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",

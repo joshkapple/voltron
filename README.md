@@ -19,9 +19,8 @@ You may also want to install
 - From the project root run `npm install`
 - run `npm install`
 - build `nx build`
-- serve `nx serve`
-- (TODO development mode concurrent hot reload for backend and frontend)
-- visit your endpoints at http://localhost:3333/ and http://localhost:3333/api
+- serve/watch frontend and backend `npm run-script dev:serve`
+- visit your backend endpoints at http://localhost:3333/api and frontend at http://localhost:4200
 
 # Docker
 ## Build
@@ -88,7 +87,7 @@ Run `ng g @nrwl/angular:lib my-lib` to generate a library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
-Libraries are shareable across libraries and applications. They can be imported from `@snhu/mylib`.
+Libraries are shareable across libraries and applications. They can be imported from `@voltron/mylib`.
 
 ## Development server
 

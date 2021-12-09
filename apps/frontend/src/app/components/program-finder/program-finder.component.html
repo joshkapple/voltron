@@ -1,0 +1,16 @@
+<div class="main">
+  <h2>Welcome to the "Too Cool For School" Academic Program Finder!</h2>
+  <p>Use the dropdowns and filters below to find a program that best suits you, or <button (click)="showAllPrograms()">view all available programs</button>.</p>
+  <finder-form #ff (filteredPrograms)="showPrograms($event)"></finder-form>
+  <div *ngIf="!visiblePrograms.length && !used">
+    What are you waiting for?? Find your perfect program today!
+  </div>
+  <div *ngIf="!visiblePrograms.length && used">
+    No available programs match the criteria selected. Try expanding your search!
+  </div>
+  <div *ngIf="visiblePrograms.length">
+    <p *ngFor="let program of visiblePrograms">
+      <a routerLink="/program/{{program.id}}">{{program.name}}</a>
+    </p>
+  </div>
+</div>

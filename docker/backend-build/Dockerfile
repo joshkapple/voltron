@@ -30,6 +30,6 @@ COPY --from=0 /usr/src/app/ /usr/src/app/
 WORKDIR /usr/src/app/
 RUN npm install --only=prod
 
-# Ensure tcp/8080 is exposed and exec
-EXPOSE 8080
+# Ensure tcp/3333 is exposed and exec
+EXPOSE 3333
 CMD [ "npm", "run-script", "start" ]

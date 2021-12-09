@@ -1,0 +1,9 @@
+<div>
+  <h2>Miles test</h2>
+  <button (click)="miles()">miles</button>
+  <ul *ngIf="milesData.length">
+    <li *ngFor="let md of milesData">
+      {{md}}
+    </li>
+  </ul>
+</div>

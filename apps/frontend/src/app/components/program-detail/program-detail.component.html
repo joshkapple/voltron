@@ -1,0 +1,18 @@
+<div *ngIf="program">
+  <h2>{{program.name | uppercase}}</h2>
+  <p> {{program.description}}</p>
+  <div>
+    Program specs:
+    <ul>
+      <li>Degree: {{program.degree | degree}}</li>
+      <li>Tuition: {{program.tuition | tuition}}</li>
+      <li>Duration: {{program.duration}} years</li>
+    </ul>
+    Contact info:
+    <ul>
+      <li>Dean: {{program.contact.dean}}</li>
+      <li>Email: {{program.contact.email}}</li>
+    </ul>
+  </div>
+  <button (click)="goBack()">Find another program</button>
+</div>

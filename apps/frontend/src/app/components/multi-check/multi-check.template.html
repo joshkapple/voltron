@@ -1,0 +1,11 @@
+<div id={{multiCheckId}}>
+  <div><strong>{{label}}</strong></div>
+  <div *ngFor="let cbv of checkboxValues">
+    <input class="multi-checkbox" name="{{cbv.trim() | lowercase}}" id="{{cbv.trim() | lowercase}}" type="checkbox" (change)="toggleCheckbox(cbv, $any($event.target).value)" />
+    <label for="{{cbv.trim() | lowercase}}">{{formatted(cbv)}}</label>
+  </div>
+  <div class="toggles">
+    <button (click)="selectAll()">select all</button>
+    <button (click)="clearAll()">clear</button>
+  </div>
+</div>
