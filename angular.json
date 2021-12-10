@@ -237,14 +237,22 @@
           "builder": "@nrwl/storybook:storybook",
           "options": {
             "uiFramework": "@storybook/angular",
+            "docsMode": true,
             "port": 4400,
+            "staticDir": ["libs/ui/src/lib/assets"],
             "config": {
-              "configFolder": "libs/ui/.storybook"
+              "configFolder": "libs/ui/.storybook",
+              "configPath": "libs/ui/.storybook",
+              "srcRoot": "libs/ui/src/lib"
             }
           },
           "configurations": {
             "ci": {
               "quiet": true
+            },
+            "dev": {
+              "watch": true,
+              "quiet": false
             }
           }
         },
